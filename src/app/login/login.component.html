@@ -1,0 +1,59 @@
+<!-- <p>login works!</p> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://kit.fontawesome.com/3d2bd18eb6.js" crossorigin="anonymous"></script> -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://kit.fontawesome.com/3d2bd18eb6.js" crossorigin="anonymous"></script> -->
+    <title>Login</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <label>Sign In</label>
+
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-container input-icons">
+          <div class="icon">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <input
+            class="input-field"
+            type="text"
+            placeholder="Username"
+            required
+          />
+        </div>
+
+        <div class="input-container input-icons">
+          <i class="fa fa-lock"></i>
+          <input
+            class="input-field"
+            type="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+
+        <div>
+          <button type="submit" class="btn" routerLink="/dashboard">SIGN IN</button>
+        </div>
+
+        <div class="link">
+          <a routerLink="/account-creation">Create an Account</a>
+        </div>
+      </form>
+
+    </div>
+
+    <!-- <div class="btn-text-right">
+  <button class="btn btn-primary">SIGN IN</button>
+</div>   -->
+  </body>
+</html>

@@ -1,0 +1,23 @@
+.container {
+  
+  margin: auto;
+  
+  background-color: whitesmoke;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  border-radius: 20px;
+  height: 300px;
+  width: 350px;
+
+}
+
+textarea{
+  resize: none;
+}

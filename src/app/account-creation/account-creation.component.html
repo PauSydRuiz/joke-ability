@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="container">
+    <label>Sign Up</label>
+
+    <form>
+      <div class="input-container input-icons">
+        <div class="icon">
+          <i class="fa fa-envelope"></i>
+        </div>
+        <input
+          class="input-field"
+          type="email"
+          placeholder="Email"
+          required
+        />
+
+      </div>
+      <div class="input-container input-icons">
+        <div class="icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <input
+          class="input-field"
+          type="text"
+          placeholder="Username"
+          required
+        />
+      </div>
+
+      <div class="input-container input-icons">
+        <i class="fa fa-lock"></i>
+        <input
+          class="input-field"
+          type="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+
+      <div class="input-container input-icons">
+        <i class="fa fa-lock"></i>
+        <input
+          class="input-field"
+          type="password"
+          placeholder="Confirm Password"
+          required
+        />
+      </div>
+
+      <div>
+        <button type="submit" class="btn">SIGN UP</button>
+      </div>
+
+      <div class="link">
+        Already have an account? <a routerLink="/login">Sign In</a>
+      </div>
+    </form>
+
+  </div>
+  <!-- <p>account-creation works!</p> -->
+  
+</body>
+</html>
+
+
+
+
