@@ -17,8 +17,14 @@
 
     <div class="container">
       <label>Sign In</label>
-    
-      <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <!-- (ngSubmit)="login()" -->
+      <div id="success" *ngIf="alert" class="alert alert-success" role="alert">
+        <strong>Incorrect Username or Password.</strong>
+        <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <form class="form" [formGroup]="loginForm">
         <div class="input-container input-icons">
           <div class="icon">
             <i class="fa-solid fa-user"></i>
@@ -31,6 +37,9 @@
             required
           />
         </div>
+        <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+          <div class="small" *ngIf="f['username'].errors && f['username'].errors['required']"><small>Username is required.</small></div>
+        </div>
 
         <div class="input-container input-icons">
           <i class="fa fa-lock"></i>
@@ -42,9 +51,11 @@
             required
           />
         </div>
-
+        <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+          <div class="small" *ngIf="f['password'].errors && f['password'].errors['required']"><small>Password is required.</small></div>
+        </div>
         <div>
-          <button type="button" class="btn">SIGN IN</button>
+          <button (click)="loginSubmit(loginForm.value)" [disabled]="loginForm.invalid" type="submit" class="btn">SIGN IN</button>
         </div>
 
         <div class="link">

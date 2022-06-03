@@ -18,9 +18,24 @@
       "name": "typicode"
     }
   ],
-  "signupUsersList": {
-    "email": "syd@email.com",
-    "username": "syd",
-    "password": ""
+  "signupUsersList": [
+  {
+    "email": "test@email.com",
+    "username": "test12",
+    "password": "11111",
+    "confirmpassword": "11111"
+  },
+  {
+    "email": "sample@email.com",
+    "username": "sample",
+    "password": "11111",
+    "confirmpassword": "11111"
+  },
+  {
+    "email": "email@email.com",
+    "username": "email",
+    "password": "11111",
+    "confirmpassword": "11111"
   }
+]
 }

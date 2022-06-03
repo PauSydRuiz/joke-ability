@@ -143,3 +143,32 @@ a{
   text-decoration: none;
   color:dodgerblue;
 }
+
+button:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.small{
+  margin-top: -10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: red;
+}
+
+#success{
+  background-color: pink;
+  margin: auto;
+  width: 248px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 7px;
+  font-family: "system-ui";
+}
+.form{
+  padding-top: 10px;
+}

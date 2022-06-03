@@ -23,5 +23,9 @@ export class JokeService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts')
 
   }
+
+  getUser(){
+    return this.http.get(this.url)
+  }
 }
 
