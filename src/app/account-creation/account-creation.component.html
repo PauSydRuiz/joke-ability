@@ -8,6 +8,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>  
   <title>Document</title>
 </head>
 <body>
@@ -15,51 +16,73 @@
   <div class="container">
     <label>Sign Up</label>
 
-    <form>
+    <form [formGroup]="signupForm" (ngSubmit)="submit()">
       <div class="input-container input-icons">
         <div class="icon">
           <i class="fa fa-envelope"></i>
         </div>
         <input
           class="input-field"
-          type="email"
+          formControlName="email"
+          type="text"
           placeholder="Email"
-          required
+          minlength="3"
         />
-
       </div>
+      <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['email'].errors && f['email'].errors['required']"><small>Email is required.</small></div>
+        <div class="small" *ngIf="f['email'].errors && f['email'].errors['email']"><small>Please, enter valid email address.</small></div>
+      </div>
+      <!-- <div class="small">
+        <small *ngIF="signupForm.get('email').invalid" class="text-danger">Name is required.</small>
+      </div> -->
+  
       <div class="input-container input-icons">
         <div class="icon">
           <i class="fa-solid fa-user"></i>
         </div>
         <input
           class="input-field"
+          formControlName="username"
           type="text"
           placeholder="Username"
-          required
+          minlength="5"
         />
       </div>
+      <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['username'].errors && f['username'].errors['required']"><small>Username is required.</small></div>
+        <div class="small" *ngIf="f['username'].errors && f['username'].errors['minlength']"><small>Username must be atleast 5 characters long.</small></div>
+    </div>
 
       <div class="input-container input-icons">
         <i class="fa fa-lock"></i>
         <input
           class="input-field"
+          formControlName="password"
           type="password"
           placeholder="Password"
-          required
+          minlength="5"
         />
       </div>
+      <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['password'].errors && f['password'].errors['required']"><small>Password is required.</small></div>
+        <div class="small" *ngIf="f['password'].errors && f['password'].errors['minlength']"><small>Password must be atleast 5 characters long.</small></div>
+    </div>
 
       <div class="input-container input-icons">
         <i class="fa fa-lock"></i>
         <input
           class="input-field"
+          formControlName="confirmpassword"
           type="password"
           placeholder="Confirm Password"
-          required
+          minlength="5"
         />
       </div>
-
+      <div *ngIf="f['confirmpassword'].touched && f['confirmpassword'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['confirmpassword'].errors && f['confirmpassword'].errors['required']"><small>Confirm Password is required.</small></div>
+        <div class="small" *ngIf="f['confirmpassword'].errors && f['confirmpassword'].errors['mismatch']"><small>Password and Confirm Password not match.</small></div>
+    </div>
       <div>
         <button type="submit" class="btn">SIGN UP</button>
       </div>

@@ -17,14 +17,15 @@
 
     <div class="container">
       <label>Sign In</label>
-
-      <form (ngSubmit)="onSubmit()">
+    
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
         <div class="input-container input-icons">
           <div class="icon">
             <i class="fa-solid fa-user"></i>
           </div>
           <input
             class="input-field"
+            formControlName="username"
             type="text"
             placeholder="Username"
             required
@@ -35,6 +36,7 @@
           <i class="fa fa-lock"></i>
           <input
             class="input-field"
+            formControlName="password"
             type="password"
             placeholder="Password"
             required
@@ -42,7 +44,7 @@
         </div>
 
         <div>
-          <button type="submit" class="btn" routerLink="/dashboard">SIGN IN</button>
+          <button type="button" class="btn">SIGN IN</button>
         </div>
 
         <div class="link">

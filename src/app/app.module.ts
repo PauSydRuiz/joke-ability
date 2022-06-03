@@ -7,6 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { AccountCreationComponent } from './account-creation/account-creation.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 
@@ -16,12 +20,19 @@ import { AccountCreationComponent } from './account-creation/account-creation.co
     LoginComponent,
     DashboardComponent,
     JokesComponent,
-    AccountCreationComponent
+    AccountCreationComponent,
+    
+    
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    
+    
    
     
   ],

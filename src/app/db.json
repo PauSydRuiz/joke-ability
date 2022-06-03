@@ -1,0 +1,10 @@
+{
+"signupUsersList": 
+[
+  {
+  "email": "test@gmail.com",
+  "username": "test",
+  "password": "123"
+  }
+]
+}
