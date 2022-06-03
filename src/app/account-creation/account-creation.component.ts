@@ -15,6 +15,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./account-creation.component.scss'],
 })
 export class AccountCreationComponent implements OnInit {
+
+  alert: boolean=false
   signupForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', Validators.required),
@@ -27,7 +29,9 @@ export class AccountCreationComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.signupForm.value);
+    // console.log(this.signupForm.value);
+   console.log("Input required fields")
+    
   }
 
   constructor(private userto: JokeService) {}
@@ -47,7 +51,11 @@ export class AccountCreationComponent implements OnInit {
     );
   }
 
+  
+  
+
   signUp() {
+
     //console.warn(this.addUser.value)
     // this.userto.saveUser(this.addUser.value).subscribe((result: any)=>{
     //   console.warn("result is here",result)
@@ -55,6 +63,9 @@ export class AccountCreationComponent implements OnInit {
     // }
     // );
     // console.log(this.signupForm.value, '<======== signup form value');
+
+
+
     this.userto.saveUser(this.signupForm.value).subscribe((result: any) => {
       // console.log('result is here', result);
       console.log(
@@ -62,11 +73,20 @@ export class AccountCreationComponent implements OnInit {
         this.signupForm.value,
         '<======== signup form value'
       );
+        
     });
+    
+  
 
     // get all post
     this.userto.getPost().subscribe((response: any) => {
       console.log(response);
     });
+    this.alert=true,
+    this.signupForm.reset({})
+  }
+  closeAlert()
+  {
+    this.alert=false
   }
 }
