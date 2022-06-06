@@ -9,6 +9,10 @@ import { JokesComponent } from './jokes/jokes.component';
 import { AccountCreationComponent } from './account-creation/account-creation.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+import { JokeListComponent } from './joke-list/joke-list.component';
+
+
 
 
 
@@ -21,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     DashboardComponent,
     JokesComponent,
     AccountCreationComponent,
+    JokeListComponent,
     
     
     
@@ -36,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
    
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,13 +11,19 @@
   <div class="container">
     <form>
       <div>
-        <input type="text" placeholder="Author">
+        <input class="input-field" type="text" placeholder="Author">
       </div>
         
       <div>
-        <input type="text" placeholder="Title">
+        <input class="input-field" type="text" placeholder="Title">
+        
       </div>
-
+      <div>
+        <label>
+          Date: {{todayDate | date : 'yyyy-MM-dd'}}
+          </label>
+      </div>
+      
       <div>
         <textarea id="w3review" name="w3review" rows="4" cols="45" placeholder="Details"></textarea>
       </div>
@@ -31,7 +37,6 @@
     </form>
     
   </div>
-
 
 
 </body>

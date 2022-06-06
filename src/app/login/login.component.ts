@@ -103,12 +103,14 @@ export class LoginComponent implements OnInit {
           // console.log("User is Valid" , this.users[i]);
           localStorage.setItem("isLoggedIn", "true");
           this.router.navigate(['/dashboard']);
+          
         }
         else 
         {
           // console.log("User is Invalid");
-          //localStorage.clear();
+          // localStorage.clear();
           this.alert=true;
+          
         }
      
     }    

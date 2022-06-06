@@ -20,12 +20,17 @@ export class JokeService {
 
   //get data
   getPost(){
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
-
+    return this.http.get('http://localhost:3000/joke-list')
+    // 
   }
 
   getUser(){
     return this.http.get(this.url)
+  }
+
+
+  getJokes(){
+    return this.http.get('http://localhost:3000/joke-list')
   }
 }
 

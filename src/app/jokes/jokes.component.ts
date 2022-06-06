@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-jokes',
   templateUrl: './jokes.component.html',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JokesComponent implements OnInit {
 
+  todayDate = new Date();
+
   routes= [
     { linkname: 'Jokes', url: 'jokes'}
   ]
  
 
 
-  constructor() { }
+  constructor() { 
+  
+  }
 
   ngOnInit(): void {
   }

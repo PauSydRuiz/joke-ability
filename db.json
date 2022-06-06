@@ -1,41 +1,63 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": [
-    {
-      "name": "typicode"
-    }
-  ],
   "signupUsersList": [
-  {
-    "email": "test@email.com",
-    "username": "test12",
-    "password": "11111",
-    "confirmpassword": "11111"
-  },
-  {
-    "email": "sample@email.com",
-    "username": "sample",
-    "password": "11111",
-    "confirmpassword": "11111"
-  },
-  {
-    "email": "email@email.com",
-    "username": "email",
-    "password": "11111",
-    "confirmpassword": "11111"
-  }
-]
+    {
+      "email": "email@email.com",
+      "username": "email",
+      "password": "11111",
+      "id": 1
+    },
+    {
+      "email": "sample@email.com",
+      "username": "sample",
+      "password": "11111",
+      "id": 2
+    },
+    {
+      "email": "test@test.com",
+      "username": "test123",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "email": "test@test.com",
+      "username": "test123",
+      "password": "12345",
+      "id": 4
+    },
+    {
+      "email": "dddd@ddd.com",
+      "username": "ddddd",
+      "password": "dddddd",
+      "id": 5
+    },
+    {
+      "email": "pausyd.ruiz@gmail.com",
+      "username": "pau123",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "email": "ewqe@email.com",
+      "username": "qwerty",
+      "password": "12345",
+      "id": 7
+    }
+  ],
+
+
+  "joke-list": [
+    {
+      "author": "John Doe",
+      "date": "06/06/2022",
+      "joke": "What do bees say when they see an overhyped event? What’s all the buzz is about.",
+      "id": 1
+    },
+    {
+      "author": "Juan Dela Cruz",
+      "date": "06/06/2022",
+      "joke": "An average female is an iron man. I mean, an average Fe-male is an iron man!",
+      "id": 1
+    }
+  ]
 }
+

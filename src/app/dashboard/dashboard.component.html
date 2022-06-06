@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="sidebar">
-      <br>
-      <div>
-        <label>Title</label>
-      </div>
-     <br>
-      <a routerLinkActive="active" routerLink="/login">Feed</a>
-      <a routerLinkActive="" routerLink="/joke">Post</a>
-      <a routerLinkActive="" routerLink="/login">Top Jokes</a>
-      <div class="logout">
-        <a routerLinkActive="active">Logout</a>
-      </div>
-    </div>
-    
-    <div class="content">
-      
-    </div>
+<div class="sidebar">
+  <br />
+  <div>
+  
+    <label class="menu" *Ngfor="let item of username">{{item.username}}</label>
+  </div>
+  <br />
+  <a class="menu" routerLinkActive="active" routerLink="/dashboard/joke-list">Feed</a>
+  <a class="menu" routerLinkActive="active" routerLink="/dashboard/jokes">Post</a>
+  <a class="menu" routerLinkActive="" routerLink="/">Top Jokes</a>
+  <div class="logout">
+    <a class="menu" routerLinkActive="active" (click)="logout">Logout</a>
+  </div>
+</div>
 
-
-    
-    
-  </body>
-</html>
-
-<!-- <p>dashboard works!</p> -->
+<div>
+  <router-outlet></router-outlet>
+</div>

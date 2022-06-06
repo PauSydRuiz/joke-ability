@@ -22,7 +22,8 @@
         <span aria-hidden="true">&times;</span>
       </button> -->
     </div>
-    <form class="form" #myForm="ngForm" [formGroup]="signupForm" (ngSubmit)="signUp()">
+    <!-- (ngSubmit)="signUp()" -->
+    <form class="form" #myForm="ngForm" [formGroup]="signupForm" >
       <div class="input-container input-icons">
         <div class="icon">
           <i class="fa fa-envelope"></i>
@@ -90,7 +91,8 @@
         <div class="small" *ngIf="f['confirmpassword'].errors && f['confirmpassword'].errors['mismatch']"><small>Password and Confirm Password not match.</small></div>
     </div>
       <div>
-        <button (click)="closeAlert()" type="submit" class="btn" [disabled]="myForm.invalid">SIGN UP</button>
+        <!-- (click)="closeAlert()" -->
+        <button type="submit" class="btn" [disabled]="myForm.invalid" (click)="signUp(signupForm.value)">SIGN UP</button>
       </div>
 
       <div class="link">

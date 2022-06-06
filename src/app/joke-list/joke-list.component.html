@@ -1,0 +1,19 @@
+<div class="view">
+  <table>
+    <thead>
+        <tr>
+          <th>Author</th>
+          <th>Date</th>
+          <th>Joke</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let joke of jokeList">
+        <td>{{ joke.author }}</td>
+        <td>{{ joke.date }}</td>
+        <td>{{ joke.joke }}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+</div>
