@@ -15,25 +15,47 @@
 </body>
 </html>
 <div class="view">
-  <!-- <table>
+  <table >
     <thead>
         <tr>
-          <th>Author</th>
-          <th>Date</th>
-          <th>Joke</th>
+          <th class="tbHeader">Author</th>
+          <!-- <th>Date</th> -->
+          <th class="tbHeader1">Joke Detail</th>
+          <th colspan="2"class="tbHeader2">Action</th>
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let joke of jokeList">
-        <td>{{ joke.author }}</td>
-        <td>{{ joke.date }}</td>
+      <tr *ngFor="let joke of jokeList
+      | paginate
+              : {
+                  itemsPerPage: tableSize,
+                  currentPage: page,
+                  totalItems: count
+                };
+          let i = index
+        ">
+        <!-- <a routerLink="/profile/{{ joke.author }}"></a> -->
+        <td><a routerLink="/profile/{{ joke.id }}">{{joke.author}}</a></td>
+        <!-- <td>{{ joke.date }}</td> -->
         <td>{{ joke.joke }}</td>
+        
+        <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-up" aria-hidden="true" ></i></a></td>
+        <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></td>
        
       </tr>
     </tbody>
-  </table> -->
+  </table>
+  <div class="page"> 
+    <pagination-controls 
+      previousLabel="Prev"
+      nextLabel="Next"
+      (pageChange)="onTableDataChange($event)"
+    >
+    </pagination-controls>
+  </div>
+  
 
-   <table>
+   <!-- <table>
     <thead>
         <tr>
           <th width="12%" ></th>
@@ -65,5 +87,5 @@
       </tr>
        
     </tbody>
-  </table>
+  </table> -->
 </div>

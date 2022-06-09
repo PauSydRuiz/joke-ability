@@ -43,10 +43,10 @@
   
       <div class="input-container input-icons">
         
-        <textarea class="detail" formControlName="detail" placeholder="Detail"></textarea>
+        <textarea class="detail" formControlName="joke" placeholder="Detail"></textarea>
       </div>
-      <div *ngIf="f['detail'].touched && f['detail'].invalid" class="alert alert-danger">
-        <div class="small" *ngIf="f['detail'].errors && f['detail'].errors['required']"><small>Detail is required.</small></div>
+      <div *ngIf="f['joke'].touched && f['joke'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['joke'].errors && f['joke'].errors['required']"><small>Detail is required.</small></div>
         
     </div>
 

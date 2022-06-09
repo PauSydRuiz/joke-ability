@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Author } from './author';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -39,6 +41,12 @@ export class JokeService {
     return this.http.post(this.jokeUrl,data)
   }
 
-  
+  // getAuthor(id: number): Observable<Author> {
+  //   const url = `${this.jokeUrl}/${id}`;
+  //   return this.http.get<Author>(url).pipe(
+  //     tap(_ => this(`fetched author id=${id}`)),
+  //     catchError(this.handleError<Author>(`getAuthor id=${id}`))
+  //   );
+  // }
 }
 

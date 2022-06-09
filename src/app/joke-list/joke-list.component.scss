@@ -14,7 +14,7 @@
   bottom: 50px;
   border-radius: 20px;
   //height: 300px;
-  width: 700px;
+  width: 800px;
   height:fit-content;
   font-family: "system-ui";
   font-size: 0.9rem;
@@ -25,11 +25,45 @@
   padding: 20px;
 
 }
-// table, th, td {
-//   border: 1px solid;
-// }
+table.fixed-table, th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  table-layout:fixed;
+  width: 800px;
+  
+}
 
 
 #margin{
   margin-right:  50px;
+}
+
+.page{
+  margin: auto;
+}
+
+.tbHeader{
+  text-align: center;
+  width:20%;
+}
+.tbHeader1{
+  text-align: center;
+  width:60%;
+}
+.tbHeader2{
+  text-align: center;
+  width:20%;
+}
+
+.td-icon{
+  text-align: center;
+}
+
+.fa-thumbs-up{
+  font-size: x-large;
+}
+
+.fa-thumbs-down{
+  font-size: x-large;
 }

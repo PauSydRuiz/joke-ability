@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -38,6 +39,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPaginationModule,
     
     
    

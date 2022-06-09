@@ -23,7 +23,7 @@ export class JokesComponent implements OnInit {
   id:any
   postJoke = new FormGroup({
     author: new FormControl('', Validators.required),
-    detail: new FormControl('', Validators.required),
+    joke: new FormControl('', Validators.required),
     // date: new FormControl(),
   });
 
@@ -57,15 +57,14 @@ export class JokesComponent implements OnInit {
     let postJoke = {
       author: data.author,
       // date: data.date,
-      detail: data.joke,
+      joke: data.joke,
       id: data.id++
     }
     this.userto.saveJoke(postJoke).subscribe((data: any)=>{
       console.log(data);
-      // console.log('Date',this.todayDate)
-      this.alert=true
+      // console.log('Date',this.todayDate
       this.postJoke.reset({})
-      
+      this.alert=true;
     })
   }
 

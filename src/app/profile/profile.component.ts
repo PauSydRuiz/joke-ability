@@ -1,27 +1,26 @@
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { JokeService } from '../joke.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit, OnDestroy {
-  username: any;
-  // id: any;
-  private sub: any;
+export class ProfileComponent implements OnInit {
+  author: any = [];
   
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private jokeService: JokeService) {}
   
-  ngOnInit() {
-  this.sub = this.activatedRoute.params.subscribe(params => {
-  this.username = params['username'];
-  // this.id = params['id'];
-  });
+  ngOnInit(): void {
+    this.getAuthor();
   }
   
-  ngOnDestroy() {
-  this.sub.unsubscribe();
+  getAuthor():void {
+    const id = 
+    Number(this.route.snapshot.paramMap.get('id'));
+      this.jokeService.getUser()
+     
   }
-  }
+}
