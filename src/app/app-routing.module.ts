@@ -8,6 +8,7 @@ import { AccountCreationComponent } from './account-creation/account-creation.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -23,6 +24,10 @@ const routes: Routes = [
       { path: '', redirectTo: 'joke-list', pathMatch: 'full' },
       { path: 'joke-list', component: JokeListComponent },
       { path: 'jokes', component: JokesComponent },
+      { path: 'profile', component: ProfileComponent },
+      //{ path: 'profile/:username', component: ProfileComponent },
+      // { path: 'profile/:username/:id', component: ProfileComponent },    
+      
     ],
     
   },

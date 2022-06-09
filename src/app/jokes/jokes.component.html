@@ -4,46 +4,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>   -->
+   
   <title>Document</title>
 </head>
 <body>
-  
+
   <div class="container">
-    <form>
-      <div>
-        <input class="input-field" type="text" placeholder="Author">
-      </div>
+    <!-- <label>Post</label> -->
+    
+    <div id="success" *ngIf="alert" class="alert alert-success" role="alert">
+      <strong>Success</strong>
+      <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button> -->
+    </div>
+    <!-- (ngSubmit)="signUp()" -->
+    <form class="form" #myForm="ngForm" [formGroup]="postJoke" >
+      <div class="input-container">
         
-      <div>
-        <input class="input-field" type="text" placeholder="Title">
+        <input
+          class="input-field"
+          formControlName="author"
+          type="text"
+          placeholder="Author"
+        />
+      </div>
+      <div *ngIf="f['author'].touched && f['author'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['author'].errors && f['author'].errors['required']"><small>Author is required.</small></div>
+      </div>
+      <!-- <div class="small">
+        <small *ngIF="signupForm.get('email').invalid" class="text-danger">Name is required.</small>
+      </div> -->
+  
+      <div class="input-container input-icons">
         
+        <textarea class="detail" formControlName="detail" placeholder="Detail"></textarea>
       </div>
+      <div *ngIf="f['detail'].touched && f['detail'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['detail'].errors && f['detail'].errors['required']"><small>Detail is required.</small></div>
+        
+    </div>
+
       <div>
-        <label>
-          Date: {{todayDate | date : 'yyyy-MM-dd'}}
-          </label>
-      </div>
-      
-      <div>
-        <textarea id="w3review" name="w3review" rows="4" cols="45" placeholder="Details"></textarea>
-      </div>
-      
-      <div>
-        <button type="submit" class="btn">Create</button>
-      
-        <button type="submit" class="btn">Clear</button>
+        
+        <button type="submit" class="btn" [disabled]="myForm.invalid" (click)="addJoke(postJoke.value)">POST</button>
       </div>
 
     </form>
-    
+
   </div>
 
-
+  
 </body>
 </html>
-
-
-
-
-
-<!-- <p>jokes works!</p> -->

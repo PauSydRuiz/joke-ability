@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { JokeListComponent } from './joke-list/joke-list.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -26,6 +27,7 @@ import { JokeListComponent } from './joke-list/joke-list.component';
     JokesComponent,
     AccountCreationComponent,
     JokeListComponent,
+    ProfileComponent,
     
     
     

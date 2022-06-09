@@ -1,7 +1,7 @@
 .view{
   margin: auto;
   
-  border:1px solid black;
+  //border:1px solid black;
   background-color: whitesmoke;
   padding: 20px;
   display: flex;
@@ -14,8 +14,22 @@
   bottom: 50px;
   border-radius: 20px;
   //height: 300px;
-  width: 800px;
+  width: 700px;
   height:fit-content;
   font-family: "system-ui";
   font-size: 0.9rem;
+}
+
+
+.next{
+  padding: 20px;
+
+}
+// table, th, td {
+//   border: 1px solid;
+// }
+
+
+#margin{
+  margin-right:  50px;
 }

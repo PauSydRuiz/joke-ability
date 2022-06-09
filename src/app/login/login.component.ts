@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -15,13 +15,14 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 export class LoginComponent implements OnInit {
 
   loginForm:any = FormGroup;
-  users:any = [];
+  users: any = [];
+ 
   // username = new FormControl('');
   // password = new FormControl('');
   // login = 'Sign In';
   alert: boolean=false
- 
 
+ 
   
   get f() {
     return this.loginForm.controls;
@@ -102,8 +103,10 @@ export class LoginComponent implements OnInit {
         {
           // console.log("User is Valid" , this.users[i]);
           localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("username", this.users[i].username);
+          localStorage.setItem("id", this.users[i].id);
           this.router.navigate(['/dashboard']);
-          
+          console.log('username',this.users[i].username)
         }
         else 
         {

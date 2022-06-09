@@ -29,6 +29,7 @@
           <div class="icon">
             <i class="fa-solid fa-user"></i>
           </div>
+          
           <input
             class="input-field"
             formControlName="username"
@@ -36,7 +37,9 @@
             placeholder="Username"
             required
           />
+          
         </div>
+        
         <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
           <div class="small" *ngIf="f['username'].errors && f['username'].errors['required']"><small>Username is required.</small></div>
         </div>
@@ -55,7 +58,7 @@
           <div class="small" *ngIf="f['password'].errors && f['password'].errors['required']"><small>Password is required.</small></div>
         </div>
         <div>
-          <button (click)="loginSubmit(loginForm.value)" [disabled]="loginForm.invalid" type="submit" class="btn">SIGN IN</button>
+          <button (click)="loginSubmit(loginForm.value)" [disabled]="loginForm.invalid" type="submit" class="btn" >SIGN IN</button>
         </div>
 
         <div class="link">
@@ -64,7 +67,7 @@
       </form>
 
     </div>
-
+    
     <!-- <div class="btn-text-right">
   <button class="btn btn-primary">SIGN IN</button>
 </div>   -->

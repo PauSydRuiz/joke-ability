@@ -1,5 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  rel="stylesheet"
+/>
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
 <div class="view">
-  <table>
+  <!-- <table>
     <thead>
         <tr>
           <th>Author</th>
@@ -14,6 +30,40 @@
         <td>{{ joke.joke }}</td>
        
       </tr>
+    </tbody>
+  </table> -->
+
+   <table>
+    <thead>
+        <tr>
+          <th width="12%" ></th>
+          <th width="88%" ></th>
+          
+        </tr>
+    </thead>
+    <tbody *ngFor="let joke of jokeList" class="next">
+      <tr>
+        <td >Author: 
+        <td ><strong><a routerLink="/profile">{{ joke.author }}</a></strong></td>
+      </tr>
+      <tr>
+        <td >Date Posted:</td>
+        <td > <label>{{ joke.date }}</label> </td>
+      </tr>
+        <tr>
+          <td>Post</td>
+        <td>{{ joke.joke }}</td>
+      </tr>
+      <tr>
+        <td></td>
+        
+        <td> <i id="margin" class="fa fa-thumbs-up" aria-hidden="true"></i>    <i class="fa fa-thumbs-down" aria-hidden="true"></i></td>
+      </tr>
+      <tr>
+        <td class="next"></td>
+        
+      </tr>
+       
     </tbody>
   </table>
 </div>

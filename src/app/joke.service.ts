@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
 export class JokeService {
   url="http://localhost:3000/signupUsersList"
+  jokeUrl="http://localhost:3000/joke-list"
 
   constructor(private http:HttpClient) { }
   
@@ -32,5 +33,12 @@ export class JokeService {
   getJokes(){
     return this.http.get('http://localhost:3000/joke-list')
   }
+
+  saveJoke(data: any){
+    console.log("service ",data)
+    return this.http.post(this.jokeUrl,data)
+  }
+
+  
 }
 

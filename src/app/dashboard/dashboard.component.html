@@ -1,15 +1,15 @@
 <div class="sidebar">
   <br />
-  <div>
+  <div class="user">
   
-    <label class="menu" *Ngfor="let item of username">{{item.username}}</label>
+    <label>Hi, <label class="uname">{{username | uppercase }}</label></label>
   </div>
   <br />
   <a class="menu" routerLinkActive="active" routerLink="/dashboard/joke-list">Feed</a>
   <a class="menu" routerLinkActive="active" routerLink="/dashboard/jokes">Post</a>
   <a class="menu" routerLinkActive="" routerLink="/">Top Jokes</a>
   <div class="logout">
-    <a class="menu" routerLinkActive="active" (click)="logout">Logout</a>
+    <a class="menu" href="/" (click)="logout()">Logout</a>
   </div>
 </div>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { JokeService } from '../joke.service';
 import { Router } from '@angular/router';
 
@@ -8,17 +8,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+  
+  username: any=[];
+  
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private user: JokeService) { }
+
 
   ngOnInit(): void {
-    
+    this.getUsername();
   }
 
   logout(){
     localStorage.clear();
-    this.router.navigate(['login'])
   }
 
-
+  getUsername(){
+    //return localStorage.getItem('username')
+    this.username=localStorage.getItem('username');
+  }
+  
+  
 }

@@ -41,10 +41,68 @@
       "username": "qwerty",
       "password": "12345",
       "id": 7
+    },
+    {
+      "email": "converge@email.com",
+      "username": "converge",
+      "password": "12345",
+      "id": 8
+    },
+    {
+      "email": "email@email.com",
+      "username": "roger",
+      "password": "00000",
+      "id": 9
+    },
+    {
+      "email": "test@email.com",
+      "username": "keith",
+      "password": "11111",
+      "id": 10
+    },
+    {
+      "email": "ewqe@email.com",
+      "username": "dhsdhsj",
+      "password": "11111",
+      "id": 11
+    },
+    {
+      "email": "dda@email.com",
+      "username": "dsfafa",
+      "password": "11111",
+      "id": 12
+    },
+    {
+      "email": "pausyd.ruiz@gmail.com",
+      "username": "qwerty123",
+      "password": "12345",
+      "id": 13
+    },
+    {
+      "email": "email@email.com",
+      "username": "ddasd",
+      "password": "11111",
+      "id": 14
+    },
+    {
+      "email": "ewqe@email.com",
+      "username": "qwefrg",
+      "password": "11111",
+      "id": 15
+    },
+    {
+      "email": "testsample@email.com",
+      "username": "test12345",
+      "password": "11111",
+      "id": 16
+    },
+    {
+      "email": "email@email.com",
+      "username": "qwqeqwe",
+      "password": "11111",
+      "id": 17
     }
   ],
-
-
   "joke-list": [
     {
       "author": "John Doe",
@@ -57,7 +115,11 @@
       "date": "06/06/2022",
       "joke": "An average female is an iron man. I mean, an average Fe-male is an iron man!",
       "id": 1
+    },
+    {
+      "author": "Joker",
+      "joke": "djasldjhsakjfhhasbfjhbffsaf",
+      "id": 2
     }
   ]
 }
-

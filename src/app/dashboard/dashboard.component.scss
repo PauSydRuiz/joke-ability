@@ -52,40 +52,57 @@ div.content {
   height: auto;
 }
 
-// @media screen and (max-width: 700px) {
+
+
+// @media screen and (max-width: 400px) {
+//   .sidebar a {
+//     text-align: center;
+//     float: none;
+    
+//   }
+
 //   .sidebar {
 //     width: 100%;
 //     height: auto;
-//     position: relative;
+//     // position: relative;
+  
 //   }
-//   // .sidebar a {float: left;}
-//   div.content {margin-left: 0;}
+
+//   div.content {
+//     margin-left: 0;
+//   }
 // }
+
+.menu{
+  font-family: "system-ui";
+  font-size: 0.9rem;
+  
+}
+
+.user{
+  font-family: "system-ui";
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+.uname{
+  font-weight: bold;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
 
 @media screen and (max-width: 400px) {
   .sidebar a {
     text-align: center;
     float: none;
-    
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    // position: relative;
-  
-  }
-
-  div.content {
-    margin-left: 0;
   }
 }
-
-.menu{
-  font-family: "system-ui";
-  font-size: 0.9rem;
-}
-
-
-
-

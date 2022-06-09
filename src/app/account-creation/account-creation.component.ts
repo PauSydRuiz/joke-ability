@@ -74,7 +74,9 @@ export class AccountCreationComponent implements OnInit {
 
     this.userto.saveUser(signupForm).subscribe((data: any)=>{
       console.log(data);
+      this.alert=true
       this.signupForm.reset({})
+      
     })
 
     // this.userto.saveUser(this.signupForm.value).subscribe((result: any) => {
