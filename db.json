@@ -101,79 +101,24 @@
       "username": "qwqeqwe",
       "password": "11111",
       "id": 17
+    },
+    {
+      "email": "sample@email.com",
+      "username": "pau000",
+      "password": "12345",
+      "id": 18
     }
   ],
   "joke-list": [
     {
-      "author": "John Doe",
+      "author": "qwerty",
       "joke": "What do bees say when they see an overhyped event? What’s all the buzz is about.What do bees say when they see an overhyped event? What’s all the buzz is about.",
       "id": 1
     },
     {
-      "author": "Juan Dela Cruz",
+      "author": "sample",
       "joke": "An average female is an iron man. I mean, an average Fe-male is an iron man!",
       "id": 2
-    },
-    {
-      "author": "Joker",
-      "joke": "djasldjhsakjfhhasbfjhbffsaf",
-      "id": 3
-    },
-    {
-      "author": "eqweqwe",
-      "joke": "eqweqweqweqw",
-      "id": 4
-    },
-    {
-      "author": "eweqwewq",
-      "joke": "edsadasdas",
-      "id": 5
-    },
-    {
-      "author": "dadasdqweqwed",
-      "joke": "dadasdasd",
-      "id": 6
-    },
-    {
-      "author": "eeqwe231313",
-      "joke": "eqweqeqe",
-      "id": 7
-    },
-    {
-      "author": "qweqeqweqwdasds",
-      "joke": "dasddqweqwe",
-      "id": 8
-    },
-    {
-      "author": "dasdadadeqweq",
-      "joke": "dasdasdadasd",
-      "id": 9
-    },
-    {
-      "author": "test",
-      "joke": "test",
-      "id": 10
-    },
-    {
-      "author": "author",
-      "joke": "detail",
-      "id": 11
-    },
-    {
-      "author": "Authorss",
-      "joke": "deyailssss",
-      "id": 12
-    },
-    {
-      "author": "author",
-      "joke": "deytaiskldeytaiWhat do bees say when they see an overhyped event? What’s all the buzz is about.",
-      "id": 13
-    },
-    
-    {
-      "author": "dadsa",
-      "joke": "dasdsadsa",
-      "id": 14
     }
   ]
 }

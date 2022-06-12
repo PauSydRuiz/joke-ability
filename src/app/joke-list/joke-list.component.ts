@@ -2,36 +2,36 @@ import { Component, OnInit } from '@angular/core';
 import { JokeService } from '../joke.service';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-joke-list',
   templateUrl: './joke-list.component.html',
-  styleUrls: ['./joke-list.component.scss']
+  styleUrls: ['./joke-list.component.scss'],
 })
 export class JokeListComponent implements OnInit {
-
+  find!: string;
   POSTS: any;
   page: number = 1;
   count: number = 0;
   tableSize: number = 7;
   tableSizes: any = [3, 6, 9, 12];
+  jokeList: any = [];
+  likeCount = 0;
+  isLiked = false;
 
-  jokeList: any=[];
-
-  constructor(private jokesView: JokeService, private route: ActivatedRoute) { }
+  constructor(private jokesView: JokeService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.fetchPosts();
-    
-
   }
   fetchPosts(): void {
-    this.jokesView.getJokes().subscribe((data:any)=>{
-    this.jokeList = data;
-  },
-    (error) => {
-      console.log(error);
-  })
+    this.jokesView.getJokes().subscribe(
+      (data: any) => {
+        this.jokeList = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   onTableDataChange(event: any) {
@@ -44,10 +44,26 @@ export class JokeListComponent implements OnInit {
     this.fetchPosts();
   }
 
+  likeTheButton = () => {
+    if(this.isLiked)
+    this.likeCount--;
+    else
+    this.likeCount++;
+    this.isLiked = !this.isLiked
+  }
+
+  // likeTheButton(event: any) {
+  //   console.log(event);
+
+  // }
+
+  changeData(event: any) {
+    event.stopPropagation();
+  }
   // getAuthor():void {
-  //   const id = 
+  //   const id =
   //   Number(this.route.snapshot.paramMap.get('id'));
   //     this.jokesView.getUser()
-     
+
   // }
 }

@@ -7,12 +7,14 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JokesComponent } from './jokes/jokes.component';
 import { AccountCreationComponent } from './account-creation/account-creation.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { JokeListComponent } from './joke-list/joke-list.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 
 
@@ -30,6 +32,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     JokeListComponent,
     ProfileComponent,
     
+   
+    
+    
     
     
     
@@ -39,12 +44,20 @@ import { NgxPaginationModule } from 'ngx-pagination';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
     NgxPaginationModule,
+    FormsModule,
+
+    
+    
+    
+    
     
     
    
     
   ],
+  
   providers: [DatePipe],
   bootstrap: [AppComponent]
 })

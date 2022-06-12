@@ -15,6 +15,12 @@
 </body>
 </html>
 <div class="view">
+  <input class="input-field"
+  type="text"
+  class="form-control"
+  placeholder="Search..."
+  [(ngModel)]="find"
+/>
   <table >
     <thead>
         <tr>
@@ -25,24 +31,30 @@
         </tr>
     </thead>
     <tbody>
+      
       <tr *ngFor="let joke of jokeList
       | paginate
               : {
                   itemsPerPage: tableSize,
                   currentPage: page,
                   totalItems: count
-                };
-          let i = index
-        ">
+                } | filter: find;
+          let i = index 
+        "
+        >
         <!-- <a routerLink="/profile/{{ joke.author }}"></a> -->
         <td><a routerLink="/profile/{{ joke.id }}">{{joke.author}}</a></td>
         <!-- <td>{{ joke.date }}</td> -->
         <td>{{ joke.joke }}</td>
-        
-        <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-up" aria-hidden="true" ></i></a></td>
-        <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></td>
-       
-      </tr>
+        <td class="td-icon" ng-repeat="item in collection track by joke.$index">
+          <button class="like-button" [ngClass]="{'liked':isLiked}" (click)="likeTheButton()">
+            <i class="fa fa-thumbs-up" aria-hidden="true" ></i> | <span class="like-counter">{{ likeCount }}</span>
+          </button>
+        </td>
+        <!-- <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-up" aria-hidden="true" ></i></a></td>
+        <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></td> -->
+       </tr>
+      
     </tbody>
   </table>
   <div class="page"> 
@@ -88,4 +100,5 @@
        
     </tbody>
   </table> -->
+  
 </div>
