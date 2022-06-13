@@ -1,137 +1,41 @@
 {
   "signupUsersList": [
     {
-      "email": "email@email.com",
-      "username": "email",
+      "email": "sample@email.com",
+      "username": "user123",
       "password": "11111",
       "id": 1
     },
     {
-      "email": "sample@email.com",
-      "username": "sample",
-      "password": "11111",
+      "email": "test@test.com",
+      "username": "testuser",
+      "password": "12345",
       "id": 2
     },
     {
       "email": "test@test.com",
-      "username": "test123",
+      "username": "joker",
       "password": "12345",
       "id": 3
-    },
-    {
-      "email": "test@test.com",
-      "username": "test123",
-      "password": "12345",
-      "id": 4
-    },
-    {
-      "email": "dddd@ddd.com",
-      "username": "ddddd",
-      "password": "dddddd",
-      "id": 5
-    },
-    {
-      "email": "pausyd.ruiz@gmail.com",
-      "username": "pau123",
-      "password": "123456",
-      "id": 6
-    },
-    {
-      "email": "ewqe@email.com",
-      "username": "qwerty",
-      "password": "12345",
-      "id": 7
-    },
-    {
-      "email": "converge@email.com",
-      "username": "converge",
-      "password": "12345",
-      "id": 8
-    },
-    {
-      "email": "email@email.com",
-      "username": "roger",
-      "password": "00000",
-      "id": 9
-    },
-    {
-      "email": "test@email.com",
-      "username": "keith",
-      "password": "11111",
-      "id": 10
-    },
-    {
-      "email": "ewqe@email.com",
-      "username": "dhsdhsj",
-      "password": "11111",
-      "id": 11
-    },
-    {
-      "email": "dda@email.com",
-      "username": "dsfafa",
-      "password": "11111",
-      "id": 12
-    },
-    {
-      "email": "pausyd.ruiz@gmail.com",
-      "username": "qwerty123",
-      "password": "12345",
-      "id": 13
-    },
-    {
-      "email": "email@email.com",
-      "username": "ddasd",
-      "password": "11111",
-      "id": 14
-    },
-    {
-      "email": "ewqe@email.com",
-      "username": "qwefrg",
-      "password": "11111",
-      "id": 15
-    },
-    {
-      "email": "testsample@email.com",
-      "username": "test12345",
-      "password": "11111",
-      "id": 16
-    },
-    {
-      "email": "email@email.com",
-      "username": "qwqeqwe",
-      "password": "11111",
-      "id": 17
-    },
-    {
-      "email": "sample@email.com",
-      "username": "pau000",
-      "password": "12345",
-      "id": 18
-    },
-    {
-      "email": "sample@email.com",
-      "username": "sample",
-      "password": "11111",
-      "id": 19
     }
   ],
   "joke-list": [
     {
-      "author": "qwerty",
+      "author": "user123",
       "joke": "What do bees say when they see an overhyped event? What’s all the buzz is about.What do bees say when they see an overhyped event? What’s all the buzz is about.",
       "liked": 0,
       "id": 1,
       "isLiked": false
     },
     {
-      "author": "sample",
+      "author": "testuser",
       "joke": "An average female is an iron man. I mean, an average Fe-male is an iron man!",
       "id": 2,
       "liked": 0,
       "isLiked": false
     },
     {
-      "author": "roger",
+      "author": "joker",
       "joke": "Debugging is like being the detective in a crime movie where you're also the murderer at the same time.",
       "id": 3,
       "liked": 0,
