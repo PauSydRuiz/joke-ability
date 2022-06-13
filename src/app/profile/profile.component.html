@@ -1,5 +1,17 @@
 
 <!-- <p *ngIf="id">Page: {{ id }}</p> -->
-<div *ngFor="let entry of id">
-  <h1 class="cap"> {{ entry.id }}</h1>
+<!-- <div *ngFor="let user of userList"> -->
+<div class="container">
+  <div>
+    <label class="label-font">User ID: </label> <label class="content-font">{{ userList.id }}</label>
+  </div>
+
+  <div>
+    <label class="label-font">Email: </label>{{ userList.email }}
+  </div>
+  
+  <div>
+    <label class="label-font">User: </label>{{ userList.username }}
+  </div>
+  
 </div>

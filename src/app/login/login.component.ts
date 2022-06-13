@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
   loginForm:any = FormGroup;
   users: any = [];
+  id:any=[];
  
   // username = new FormControl('');
   // password = new FormControl('');
@@ -107,6 +108,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("id", this.users[i].id);
           this.router.navigate(['/dashboard']);
           console.log('username',this.users[i].username)
+          
+          
         }
         else 
         {

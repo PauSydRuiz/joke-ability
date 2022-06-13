@@ -17,6 +17,7 @@ export class JokeListComponent implements OnInit {
   jokeList: any = [];
   likeCount = 0;
   isLiked = false;
+  liked: any;
 
   constructor(private jokesView: JokeService, private route: ActivatedRoute) {}
 
@@ -26,6 +27,7 @@ export class JokeListComponent implements OnInit {
   fetchPosts(): void {
     this.jokesView.getJokes().subscribe(
       (data: any) => {
+        console.log(data);
         this.jokeList = data;
       },
       (error) => {
@@ -44,12 +46,14 @@ export class JokeListComponent implements OnInit {
     this.fetchPosts();
   }
 
-  likeTheButton = () => {
-    if(this.isLiked)
-    this.likeCount--;
-    else
-    this.likeCount++;
-    this.isLiked = !this.isLiked
+  likeTheButton(id: any) {
+    // console.log(isLiked)?=
+    this.jokeList.forEach((element: any) => {
+      if (id == element.id) {
+        element.isLiked = !element.isLiked;
+        element.isLiked ? (element.liked += 1) : (element.liked -= 1);
+      }
+    });
   }
 
   // likeTheButton(event: any) {

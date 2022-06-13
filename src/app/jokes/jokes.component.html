@@ -26,24 +26,25 @@
     <!-- (ngSubmit)="signUp()" -->
     <form class="form" #myForm="ngForm" [formGroup]="postJoke" >
       <div class="input-container">
-        
-        <input
+        <label hidden>Author:   {{username}}</label>
+         <!-- <input
           class="input-field"
           formControlName="author"
           type="text"
           placeholder="Author"
-        />
+          value="test"
+        /> -->
       </div>
-      <div *ngIf="f['author'].touched && f['author'].invalid" class="alert alert-danger">
+      <!-- <div *ngIf="f['author'].touched && f['author'].invalid" class="alert alert-danger">
         <div class="small" *ngIf="f['author'].errors && f['author'].errors['required']"><small>Author is required.</small></div>
-      </div>
+      </div> -->
       <!-- <div class="small">
         <small *ngIF="signupForm.get('email').invalid" class="text-danger">Name is required.</small>
       </div> -->
   
       <div class="input-container input-icons">
         
-        <textarea class="detail" formControlName="joke" placeholder="Detail"></textarea>
+        <textarea class="detail" formControlName="joke" placeholder="Joke Detail"></textarea>
       </div>
       <div *ngIf="f['joke'].touched && f['joke'].invalid" class="alert alert-danger">
         <div class="small" *ngIf="f['joke'].errors && f['joke'].errors['required']"><small>Detail is required.</small></div>

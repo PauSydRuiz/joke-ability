@@ -107,18 +107,66 @@
       "username": "pau000",
       "password": "12345",
       "id": 18
+    },
+    {
+      "email": "sample@email.com",
+      "username": "sample",
+      "password": "11111",
+      "id": 19
     }
   ],
   "joke-list": [
     {
       "author": "qwerty",
       "joke": "What do bees say when they see an overhyped event? What’s all the buzz is about.What do bees say when they see an overhyped event? What’s all the buzz is about.",
-      "id": 1
+      "liked": 0,
+      "id": 1,
+      "isLiked": false,
+      "userId": 7
     },
     {
       "author": "sample",
       "joke": "An average female is an iron man. I mean, an average Fe-male is an iron man!",
-      "id": 2
+      "id": 2,
+      "liked": 0,
+      "isLiked": false
+    },
+    {
+      "author": "roger",
+      "joke": "Debugging is like being the detective in a crime movie where you're also the murderer at the same time.",
+      "id": 3,
+      "liked": 0,
+      "isLiked": false
+    },
+    {
+      "author": "sample",
+      "joke": "testDetails",
+      "isLiked": false,
+      "liked": 0,
+      "id": 4
+    },
+    {
+      "author": "sample",
+      "joke": "test",
+      "isLiked": false,
+      "liked": 0,
+      "id": 5
+    },
+    {
+      "author": "sample",
+      "userid": [],
+      "joke": "test",
+      "isLiked": false,
+      "liked": 0,
+      "id": 6
+    },
+    {
+      "author": "roger",
+      "userid": [],
+      "joke": "f;ksdjfksfsfsf",
+      "isLiked": false,
+      "liked": 0,
+      "id": 7
     }
   ]
 }

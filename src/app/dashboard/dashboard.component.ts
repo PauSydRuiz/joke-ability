@@ -10,13 +10,14 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   
   username: any=[];
-  
+  id: any=[];
 
   constructor(private router:Router, private user: JokeService) { }
 
 
   ngOnInit(): void {
     this.getUsername();
+    
   }
 
   logout(){
@@ -26,6 +27,7 @@ export class DashboardComponent implements OnInit {
   getUsername(){
     //return localStorage.getItem('username')
     this.username=localStorage.getItem('username');
+    this.id=localStorage.getItem('id');
   }
   
   

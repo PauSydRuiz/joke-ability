@@ -24,14 +24,14 @@ const routes: Routes = [
       { path: '', redirectTo: 'joke-list', pathMatch: 'full' },
       { path: 'joke-list', component: JokeListComponent },
       { path: 'jokes', component: JokesComponent },
-      { path: 'profile/:id', component: ProfileComponent,},
+      { path: 'profile/:author', component: ProfileComponent,},
       //{ path: 'profile/:username', component: ProfileComponent },
       // { path: 'profile/:username/:id', component: ProfileComponent },    
       
     ],
   
   },
-  { path: 'profile/:id', component: ProfileComponent },
+  // { path: 'profile/:author', component: ProfileComponent },
   // children: [
   //   { path: 'jokes', component: JokesComponent },
   // ]

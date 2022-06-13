@@ -1,73 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-  rel="stylesheet"
-/>
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body></body>
 </html>
 <div class="view">
-  <input class="input-field"
-  type="text"
-  class="form-control"
-  placeholder="Search..."
-  [(ngModel)]="find"
-/>
-  <table >
+  <input
+    class="input-field"
+    type="text"
+    class="form-control"
+    placeholder="Search..."
+    [(ngModel)]="find"
+  />
+  <table>
     <thead>
-        <tr>
-          <th class="tbHeader">Author</th>
-          <!-- <th>Date</th> -->
-          <th class="tbHeader1">Joke Detail</th>
-          <th colspan="2"class="tbHeader2">Action</th>
-        </tr>
+      <tr>
+        <th class="tbHeader">User</th>
+        <!-- <th>Date</th> -->
+        <th class="tbHeader1">Joke Detail</th>
+        <th colspan="2" class="tbHeader2">Action</th>
+      </tr>
     </thead>
     <tbody>
-      
-      <tr *ngFor="let joke of jokeList
-      | paginate
+      <tr
+        *ngFor="
+          let joke of jokeList
+            | paginate
               : {
                   itemsPerPage: tableSize,
                   currentPage: page,
                   totalItems: count
-                } | filter: find;
-          let i = index 
+                }
+            | filter: find;
+          let i = index
         "
-        >
+      >
         <!-- <a routerLink="/profile/{{ joke.author }}"></a> -->
-        <td><a routerLink="/profile/{{ joke.id }}">{{joke.author}}</a></td>
+        <td class="tbHeader">
+          <a routerLinkActive="active" routerLink="/dashboard/profile/{{ joke.author }}">{{
+            joke.author
+          }}</a>
+        </td>
         <!-- <td>{{ joke.date }}</td> -->
         <td>{{ joke.joke }}</td>
         <td class="td-icon" ng-repeat="item in collection track by joke.$index">
-          <button class="like-button" [ngClass]="{'liked':isLiked}" (click)="likeTheButton()">
-            <i class="fa fa-thumbs-up" aria-hidden="true" ></i> | <span class="like-counter">{{ likeCount }}</span>
+          <button
+            class="like-button"
+            [ngClass]="{ liked: isLiked }"
+            (click)="likeTheButton(joke.id)"
+          >
+            <i
+              [ngClass]="joke.isLiked ? 'fa fa-thumbs-up' : 'fa fa-thumbs-down'"
+              aria-hidden="true"
+            ></i>
+            <span class="like-counter">{{ joke.liked }}</span>
           </button>
         </td>
         <!-- <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-up" aria-hidden="true" ></i></a></td>
         <td class="td-icon"><a style="color: dodgerblue" routerLink="/profile"><i class="fa fa-thumbs-down" aria-hidden="true"></i></a></td> -->
-       </tr>
-      
+      </tr>
     </tbody>
   </table>
-  <div class="page"> 
-    <pagination-controls 
+  <div class="page">
+    <pagination-controls
       previousLabel="Prev"
       nextLabel="Next"
       (pageChange)="onTableDataChange($event)"
     >
     </pagination-controls>
   </div>
-  
 
-   <!-- <table>
+  <!-- <table>
     <thead>
         <tr>
           <th width="12%" ></th>
@@ -100,5 +111,4 @@
        
     </tbody>
   </table> -->
-  
 </div>

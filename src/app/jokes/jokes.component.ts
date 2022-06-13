@@ -13,6 +13,7 @@ import { DatePipe } from '@angular/common';
   templateUrl: './jokes.component.html',
   styleUrls: ['./jokes.component.scss'],
   
+  
 
 })
 export class JokesComponent implements OnInit {
@@ -21,15 +22,18 @@ export class JokesComponent implements OnInit {
   alert: boolean=false
   // todayDate = new Date();
   id:any
+  liked:any  
   postJoke = new FormGroup({
-    author: new FormControl('', Validators.required),
+    author: new FormControl(''),
     joke: new FormControl('', Validators.required),
     // date: new FormControl(),
   });
-
+  username: any=[];
+  userid:any=[];
   // routes= [
   //   { linkname: 'Jokes', url: 'jokes'}
   // ]
+  
  
   get f() {
     return this.postJoke.controls;
@@ -40,6 +44,7 @@ export class JokesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUsername();
   }
 
   // add(name: string): void {
@@ -55,10 +60,13 @@ export class JokesComponent implements OnInit {
 
   addJoke(data: any){
     let postJoke = {
-      author: data.author,
-      // date: data.date,
+      author: this.username,
+      userid: this.userid,
       joke: data.joke,
+      isLiked: data.isLiked=false,
+      liked:data.liked=0,
       id: data.id++
+
     }
     this.userto.saveJoke(postJoke).subscribe((data: any)=>{
       console.log(data);
@@ -66,6 +74,12 @@ export class JokesComponent implements OnInit {
       this.postJoke.reset({})
       this.alert=true;
     })
+  }
+
+  getUsername(){
+    //return localStorage.getItem('username')
+    this.username=localStorage.getItem('username');
+    this.id=localStorage.getItem('id')
   }
 
 }

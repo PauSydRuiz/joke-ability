@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { JokeService } from '../joke.service';
 
 @Component({
@@ -10,29 +10,45 @@ import { JokeService } from '../joke.service';
 export class ProfileComponent implements OnInit {
   author: any = [];
   id: any = [];
+  userList: any=[];
+  // username!:string;
+  username: any=[];
 
   constructor(
     private route: ActivatedRoute,
-    private jokeService: JokeService
+    private jokeService: JokeService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
     this.getAuthor();
-//     joke_list.forEach(element => {
-//       if(id = element.id){
-//         this.user_profile = element
-//       }
-//  });
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    //     joke_list.forEach(element => {
+    //       if(id = element.id){
+    //         this.user_profile = element
+    //       }
+    //  });
     // let id= this.route.snapshot.paramMap.get('id');
     // console.log(id);
   }
 
   getAuthor(): void {
-    console.log(this.route);
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.jokeService.getUser();
-    console.log('ID:', id);
+    const author = this.route.snapshot.paramMap.get('author');
+    console.log(author)
+    this.jokeService.getUser().subscribe((res: any) => {
+      res.forEach((e: any) => {
+        if (author == e.username) {
+          this.userList=e;
+          console.log(e);
+          
+          
+        }
 
-    this;
+      });
+    });
+
+    // this;
   }
+
+  
 }

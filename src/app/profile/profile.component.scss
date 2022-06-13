@@ -1,3 +1,40 @@
-:host {
-  height: 100vh;
+// :host {
+//   height: 100vh;
+// }
+
+
+.container {
+  
+  margin: auto;
+  
+  background-color: whitesmoke;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  text-align: left;
+  top: 200px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  border-radius: 20px;
+  
+  width: 300px;
+  height:fit-content;
+  font-family: 'system-ui';
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  padding-left: 70px;
+
+}
+
+.label-font{
+  font-weight: bold;
+
+}
+
+div{
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
