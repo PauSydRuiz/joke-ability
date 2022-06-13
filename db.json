@@ -121,8 +121,7 @@
       "joke": "What do bees say when they see an overhyped event? What’s all the buzz is about.What do bees say when they see an overhyped event? What’s all the buzz is about.",
       "liked": 0,
       "id": 1,
-      "isLiked": false,
-      "userId": 7
+      "isLiked": false
     },
     {
       "author": "sample",
@@ -137,36 +136,6 @@
       "id": 3,
       "liked": 0,
       "isLiked": false
-    },
-    {
-      "author": "sample",
-      "joke": "testDetails",
-      "isLiked": false,
-      "liked": 0,
-      "id": 4
-    },
-    {
-      "author": "sample",
-      "joke": "test",
-      "isLiked": false,
-      "liked": 0,
-      "id": 5
-    },
-    {
-      "author": "sample",
-      "userid": [],
-      "joke": "test",
-      "isLiked": false,
-      "liked": 0,
-      "id": 6
-    },
-    {
-      "author": "roger",
-      "userid": [],
-      "joke": "f;ksdjfksfsfsf",
-      "isLiked": false,
-      "liked": 0,
-      "id": 7
     }
   ]
 }
