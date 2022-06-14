@@ -14,10 +14,10 @@
   justify-content: center;
   position: relative;
   text-align: left;
-  top: 200px;
+  top: 150px;
   left: 0;
   right: 0;
-  bottom: 50px;
+  // bottom: 30px;
   border-radius: 20px;
   
   width: 300px;
@@ -37,4 +37,18 @@
 div{
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+
+@media screen and (min-width: 320px) {
+  .container {
+    position:relative;
+    margin: auto;
+    top: 150px;
+    right: 0;
+    bottom: 0;
+    width: 200px
+    // margin-left: -225px;
+    
+  }
 }

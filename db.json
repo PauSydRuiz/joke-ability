@@ -17,6 +17,12 @@
       "username": "joker",
       "password": "12345",
       "id": 3
+    },
+    {
+      "email": "jmcmanio@convergeict.com",
+      "username": "jmanio",
+      "password": "     ",
+      "id": 4
     }
   ],
   "joke-list": [
@@ -40,6 +46,54 @@
       "id": 3,
       "liked": 0,
       "isLiked": false
+    },
+    {
+      "author": "jmanio",
+      "userid": [],
+      "joke": "nak nak",
+      "isLiked": false,
+      "liked": 0,
+      "id": 4
+    },
+    {
+      "author": "jmanio",
+      "userid": [],
+      "joke": "nak naknak",
+      "isLiked": false,
+      "liked": 0,
+      "id": 5
+    },
+    {
+      "author": "jmanio",
+      "userid": [],
+      "joke": "nakanaknakanak",
+      "isLiked": false,
+      "liked": 0,
+      "id": 6
+    },
+    {
+      "author": "jmanio",
+      "userid": [],
+      "joke": "nakanaknakanaknakanaknakanak",
+      "isLiked": false,
+      "liked": 0,
+      "id": 7
+    },
+    {
+      "author": "jmanio",
+      "userid": [],
+      "joke": "nakanaknakanaknakanaknakanak",
+      "isLiked": false,
+      "liked": 0,
+      "id": 8
+    },
+    {
+      "author": "testuser",
+      "userid": [],
+      "joke": "who's there",
+      "isLiked": false,
+      "liked": 0,
+      "id": 9
     }
   ]
 }
