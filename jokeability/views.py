@@ -34,6 +34,7 @@ class JokeViewSet(
 ):
     queryset = Joke.objects.all()
     serializer_class = JokeSerializer
+    create_serializer_class = JokeSerializer
     permission_classes = [permissions.AllowAny]
 
 
