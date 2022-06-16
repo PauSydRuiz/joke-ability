@@ -5,6 +5,7 @@ from .models import Joke, Activity
 
 
 class UserSerializer(serializers.ModelSerializer):
+    #url = serializers.CharField(source='get_absolute_url', read_only=True)
 
     class Meta:
         model = get_user_model()
