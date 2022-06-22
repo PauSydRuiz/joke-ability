@@ -15,14 +15,23 @@ from core.mixins import (
     RetrieveActionMixin,
     UpdateActionMixin,
 )
-from core.models import Activity, Joke
+from core.models import Activity, Joke, User
 from core.serializers import ActivitySerializer, JokeSerializer, UserSerializer
 
 
-class UserViewSet(ReadOnlyModelViewSet):
-    queryset = get_user_model().objects.all()
+class UserViewSet(
+   CreateActionMixin,
+    RetrieveActionMixin,
+    UpdateActionMixin,
+    rest_mixins.DestroyModelMixin,
+    ListActionMixin,
+    GenericViewSet
+):
+    # queryset = get_user_model().objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
-
+    create_serializer_class = UserSerializer
+    permission_classes = [permissions.AllowAny]
 
 class JokeViewSet(
     CreateActionMixin,
