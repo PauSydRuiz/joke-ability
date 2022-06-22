@@ -18,6 +18,7 @@
   height:fit-content;
   font-family: "system-ui";
   font-size: 0.9rem;
+  overflow-x:auto;
 }
 
 
@@ -63,10 +64,25 @@ table.fixed-table, th, td {
 .fa-thumbs-up{
   font-size: x-large;
   font-weight: bold;
-  color: #1565c0;
+  color: dodgerblue;
   border: none;
     outline: none;
 }
+
+// .fa-thumbs-up:active{
+//   font-size: x-large;
+//   font-weight: bold;
+//   color: dodgerblue;
+//   border: none;
+//     outline: none;
+// }
+// .fa-thumbs-up:focus{
+//   font-size: x-large;
+//   font-weight: bold;
+//   color: dodgerblue;
+//   border: none;
+//     outline: none;
+// }
 
 .fa-thumbs-down{
   font-size: x-large;
@@ -79,12 +95,12 @@ table.fixed-table, th, td {
     outline: none;
 }
 
-// .liked {
-//   font-weight: bold;
-//   color: #1565c0;
-//   border: none;
-//     outline: none;
-// }
+.liked {
+  font-weight: bold;
+  color: #1565c0;
+  border: none;
+    outline: none;
+}
 
 
 // @media screen and (min-width: 425px) {

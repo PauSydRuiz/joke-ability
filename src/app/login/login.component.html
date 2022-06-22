@@ -18,12 +18,17 @@
     <div class="container">
       <label>Sign In</label>
       <!-- (ngSubmit)="login()" -->
-      <div id="success" *ngIf="alert" class="alert alert-success" role="alert">
-        <strong>Incorrect Username or Password.</strong>
+      <!-- <div id="success" *ngIf="alert" class="alert alert-success" role="alert">
+        <strong>Incorrect Username or Password.</strong> -->
         <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button> -->
-      </div>
+        <!-- (ngSubmit)="loginSubmit(loginForm.value)" -->
+        <div *ngIf="errorMessage">
+          <strong class="h3 text-danger">{{errorMessage}} </strong>
+        </div>
+        
+      <!-- </div> -->
       <form class="form" [formGroup]="loginForm">
         <div class="input-container input-icons">
           <div class="icon">

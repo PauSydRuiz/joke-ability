@@ -1,11 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse, HttpStatusCode, HttpHeaders, HttpParams } from '@angular/common/http';
 import { FormControl } from '@angular/forms';
 import { JokeService } from '../joke.service';
 import { isNgTemplate } from '@angular/compiler';
 import { DashboardComponent } from '../dashboard/dashboard.component';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-login',
@@ -15,14 +18,15 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 export class LoginComponent implements OnInit {
 
   loginForm:any = FormGroup;
-  users: any = [];
+  
   id:any=[];
+  
  
   // username = new FormControl('');
   // password = new FormControl('');
   // login = 'Sign In';
   alert: boolean=false
-
+  errorMessage!:string | undefined;
  
   
   get f() {
@@ -35,16 +39,16 @@ export class LoginComponent implements OnInit {
 
   // onSubmit()
   // {
-  // //      this.submitted = true;
-  // //      if(this.loginForm.valid)
-  // //      {
-  // //         localStorage.setItem("userName",this.loginForm.get('userName')?.value);
-  // //         localStorage.setItem("passWord",this.loginForm.get('passWord')?.value);  
-  // //         this.clear();
-  // //         this.loginForm.disable();
-  // //         this.router.navigate(['registration']);
-  // //      }
-  // // }
+  //     //  this.submitted = true;
+  //      if(this.loginForm.valid)
+  //      {
+  //         localStorage.setItem("userName",this.loginForm.get('userName')?.value);
+  //         localStorage.setItem("passWord",this.loginForm.get('passWord')?.value);  
+  //         // this.clear();
+  //         // this.loginForm.disable();
+  //         // this.router.navigate(['registration']);
+  //      }
+  // }
   // }
 
   // public loginForm!: FormGroup
@@ -58,14 +62,15 @@ export class LoginComponent implements OnInit {
       password: new FormControl ('', Validators.required),
     });
 
-    this.userto.getUser().subscribe((response: any) => {
-       console.log('database',response);
-       this.users = response;
-    });
+    // this.userto.getUser(this.loginForm).subscribe((response: any) => {
+    //    console.log('result',response);
+    // }
+    // );
+    
 
   }
 
-
+  
   loginSubmit(data:any){
     // this.http.get<any>("http://localhost:3000/signupUsersList")
     // .subscribe(res=>{
@@ -98,28 +103,54 @@ export class LoginComponent implements OnInit {
     // }
 
     
-    for(let i=0 ; i< this.users.length; i++)
-    {
-      if (this.users[i].username === data.username && this.users[i].password === data.password)
-        {
-          // console.log("User is Valid" , this.users[i]);
-          localStorage.setItem("isLoggedIn", "true");
-          localStorage.setItem("username", this.users[i].username);
-          localStorage.setItem("id", this.users[i].id);
-          this.router.navigate(['/dashboard']);
-          console.log('username',this.users[i].username)
+    // for(let i=0 ; i< this.users.length; i++)
+    // {
+    //   if (this.users[i].username === data.username && this.users[i].password === data.password)
+    //     {
+    //       // console.log("User is Valid" , this.users[i]);5
+    //       localStorage.setItem("isLoggedIn", "true");
+    //       localStorage.setItem("username", this.users[i].username);
+    //       localStorage.setItem("id", this.users[i].id);
+    //       this.router.navigate(['/dashboard']);
+    //       console.log('username',this.users[i].username)
           
           
-        }
-        else 
-        {
-          // console.log("User is Invalid");
-          // localStorage.clear();
-          this.alert=true;
+    //     }
+    //     else 
+    //     {
+    //       // console.log("User is Invalid");
+    //       // localStorage.clear();
+    //       this.alert=true;
           
-        }
+    //     }
+      // const jsonData = JSON.stringify(data)
      
+      
+      this.userto.getUser(this.loginForm.value).subscribe(response =>{
+        console.log('result',response);
+        localStorage.setItem("username",this.loginForm.get('username')?.value);
+        localStorage.setItem("token", JSON.stringify(response));
+        this.router.navigate(['/dashboard']);
+        
+        
+      },  error => {
+        // console.log(error);
+        this.errorMessage = error;
+      }
+      )
+      
+      // this.userto.getUser(this.loginForm).subscribe((response: any) => {
+    //    console.log('result',response);
+    // }
+
+      // if(this.loginForm.valid){
+      //   this.userto.getUser(this.loginForm.value).subscribe(result =>{
+      //     if (result.){
+
+      //     }
+      //   })
+      // }
+     
+
     }    
   }
-}
-

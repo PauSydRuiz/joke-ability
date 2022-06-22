@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JokeService } from '../joke.service';
 
 @Component({
@@ -10,14 +10,14 @@ import { JokeService } from '../joke.service';
 export class ProfileComponent implements OnInit {
   author: any = [];
   id: any = [];
-  userList: any=[];
+  userList: any = [];
   // username!:string;
-  username: any=[];
+  username: any = [];
 
   constructor(
     private route: ActivatedRoute,
     private jokeService: JokeService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -34,21 +34,16 @@ export class ProfileComponent implements OnInit {
 
   getAuthor(): void {
     const author = this.route.snapshot.paramMap.get('author');
-    console.log(author)
-    this.jokeService.getUser().subscribe((res: any) => {
+    console.log(author);
+    this.jokeService.getProfile().subscribe((res: any) => {
       res.forEach((e: any) => {
         if (author == e.username) {
-          this.userList=e;
-          console.log(e);
-          
-          
+          this.userList = e;
+          // console.log(e);
         }
-
       });
     });
 
-    // this;
+    this;
   }
-
-  
 }

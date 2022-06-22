@@ -25,10 +25,11 @@ export class JokesComponent implements OnInit {
   liked:any  
   postJoke = new FormGroup({
     author: new FormControl(''),
-    joke: new FormControl('', Validators.required),
+    post: new FormControl('', Validators.required),
     // date: new FormControl(),
   });
   username: any=[];
+  user: any=[];
   userid:any=[];
   // routes= [
   //   { linkname: 'Jokes', url: 'jokes'}
@@ -60,12 +61,13 @@ export class JokesComponent implements OnInit {
 
   addJoke(data: any){
     let postJoke = {
-      author: this.username,
-      userid: this.userid,
-      joke: data.joke,
+     user: this.username,
+      //userid: this.userid,
+      post: data.post,
       isLiked: data.isLiked=false,
       liked:data.liked=0,
-      id: data.id++
+      publish_datetime: data.publish_datetime,
+      //id: data.id++
 
     }
     this.userto.saveJoke(postJoke).subscribe((data: any)=>{

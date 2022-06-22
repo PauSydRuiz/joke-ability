@@ -18,7 +18,7 @@ import { HttpClient } from '@angular/common/http';
 export class AccountCreationComponent implements OnInit {
 
   alert: boolean=false
-  id:any
+  // id:any
   signupForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     username: new FormControl('', Validators.required),
@@ -69,7 +69,7 @@ export class AccountCreationComponent implements OnInit {
       email: data.email,
       username: data.username,
       password: data.password,
-      id: data.id++
+      // id: data.id++
     }
 
     this.userto.saveUser(signupForm).subscribe((data: any)=>{

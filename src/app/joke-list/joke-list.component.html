@@ -8,6 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
       rel="stylesheet"
     />
+    
+    <script src="https://kit.fontawesome.com/3d2bd18eb6.js" crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body></body>
@@ -45,22 +47,24 @@
       >
         <!-- <a routerLink="/profile/{{ joke.author }}"></a> -->
         <td class="tbHeader">
-          <a routerLinkActive="active" routerLink="/dashboard/profile/{{ joke.author }}">{{
-            joke.author
+          <a routerLinkActive="active" routerLink="/dashboard/profile/{{ joke.user }}">{{
+            joke.user
           }}</a>
         </td>
         <!-- <td>{{ joke.date }}</td> -->
-        <td>{{ joke.joke }}</td>
+        <td>{{ joke.post }}</td>
         <td class="td-icon" ng-repeat="item in collection track by joke.$index">
           <button
             class="like-button"
             [ngClass]="{ liked: isLiked }"
             (click)="likeTheButton(joke.id)"
           >
+          <!-- "joke.isLiked ? 'fa fa-thumbs-up' : 'fa fa-thumbs-up'" -->
             <i
               [ngClass]="joke.isLiked ? 'fa fa-thumbs-up' : 'fa fa-thumbs-down'"
               aria-hidden="true"
             ></i>
+            <!-- <i class="fa fa-thumbs-up" aria-hidden="true"></i> -->
             <span class="like-counter">{{ joke.liked }}</span>
           </button>
         </td>

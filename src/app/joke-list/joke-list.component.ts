@@ -47,7 +47,7 @@ export class JokeListComponent implements OnInit {
   }
 
   likeTheButton(id: any) {
-    // console.log(isLiked)?=
+    console.log(this.jokeList)
     this.jokeList.forEach((element: any) => {
       if (id == element.id) {
         element.isLiked = !element.isLiked;

@@ -26,7 +26,7 @@
     <!-- (ngSubmit)="signUp()" -->
     <form class="form" #myForm="ngForm" [formGroup]="postJoke" >
       <div class="input-container">
-        <label hidden>Author:   {{username}}</label>
+        <label hidden>Author: {{username}}</label>
          <!-- <input
           class="input-field"
           formControlName="author"
@@ -44,10 +44,10 @@
   
       <div class="input-container input-icons">
         
-        <textarea class="detail" formControlName="joke" placeholder="Joke Detail"></textarea>
+        <textarea class="detail" formControlName="post" placeholder="Joke Detail"></textarea>
       </div>
-      <div *ngIf="f['joke'].touched && f['joke'].invalid" class="alert alert-danger">
-        <div class="small" *ngIf="f['joke'].errors && f['joke'].errors['required']"><small>Detail is required.</small></div>
+      <div *ngIf="f['post'].touched && f['post'].invalid" class="alert alert-danger">
+        <div class="small" *ngIf="f['post'].errors && f['post'].errors['required']"><small>Detail is required.</small></div>
         
     </div>
 
